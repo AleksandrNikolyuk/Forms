@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <script>
+        window.addEventListener("load", function () {
+            var mainForm = document.getElementById('myForm');
+
+                //document.forms.myFormName // получить форму с именем
+                //document.forms.[0] // Получить форму по индексу
+
+                console.log(document.forms);
+
+            // var registration = document.getElementById("registration");
+            // registration.addEventListener("click", function () {
+            //     console.log( mainForm.elements ); //
+            //     mainForm.elements[0].value = "text";
+            //     mainForm.elements[1].value = "text2";
+            //     mainForm.elements[2].value = "text3";
+            // });
+        });
+    </script>
+</head>
+<body>
+    <form id="myForm" name="myFormName">
+        <label>Имя <input type="text" value="1" /></label>
+        <label>Фамилия<input type="text" value="2" /></label>
+        <label>Возраст<input type="text" value="3" /></label>
+        <input type="button" value="Регистрация" id="registration" />
+    </form>
+</body>
+</html>

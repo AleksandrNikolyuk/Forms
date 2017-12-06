@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form work1</title>
+  <!-- <script>
+    /*
+      Задание:
+        Сделать валидацию формы:
+        1. Логин не может быть пустым
+        2. Пароли должны совпадть
+        3. Пока не стоит что юзер согласен с лиц. соглашением - кнопка отправки не активна
+
+        + бонус - то поле, которое не прошло валидацию подсвечивать красным.
+                - которое прошло - подсвечивать зеленым.
+    */
+    window.addEventListener("load", function () {
+      var MyValidateForm = document.getElementById('MyValidateForm');
+      MyValidateForm.addEventListener("submit", function (e) {  // измените на onchange
+
+      });
+    });
+  </script> -->
+</head>
+<body>
+
+  <form id="MyValidateForm">
+    <input type="text" name="Login" placeholder="Ваш логин" />
+    <input type="password" placeholder="Ваш пароль" />
+    <input type="password" placeholder="Повторите пароль" />
+    <label for="agree">
+      <span>Вы согласны с лицензионым соглашением.</span>
+      <input type="checkbox" id="agree" />
+    </label>
+    <input type="submit" value="Отправить" />
+  </form>
+  <style>
+    #MyValidateForm{
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #MyValidateForm input{
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      padding: 10px 20px;
+    }
+  </style>
+
+    <script src="js.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form work1</title>
+  <script>
+    /*
+      Задание:
+        Сделать шиблонизатор элемента по:
+        Ширине input type=range
+        Цвету  input type=color
+        Высоте input type=number
+        Скругление углов input type=number
+        Внутрение отступы input type=number
+
+      Свойсвта: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+
+      Бонус:
+        + Сделать выборку цвета из статичных цветов которые выбираются из появившегося блока :
+        https://s3.envato.com/files/230412754/screenshots/1.png
+
+
+    1. При загрузки строницы запускается шаблонизатор и елемент
+    2. навешиваем обработчик load c вторым значением функции
+    3. Присваеваем переменную каждому инпуту(MyWidth и MyColor) и елементу (result)
+    4. Создаем еще три элемента createElement  input с type='range'
+    5. Каждому созданому елементу присваевваем переменную Myheight Myradius MyPadding
+    6. Присваеваем переменную Width которая принимает значение MyWidth.value
+    7. В переменной MyWidth навешиваем обработчик input и запускаем функцию с параметром event
+    8. В функции в елемент result присваевается ширину елемента и при выборе получаем значение  event.target.value
+    9. С переменными Myheight Myradius MyPadding повторям пункты 6, 7 ,8
+    10. Heaeder присваеваем id=Heaeder
+    11. Апендим созданые елементы Myheight Myradius MyPadding  в хедер
+    12. Выбираем MyColor
+    13. Навешиваем обработчик по клику с вторым значением функции
+    14. Создаем макет блока с выборкой цветов и присваеваем ему ид
+    15. Присваеваем переменную блоку по ид
+    16. По клику получаем макет блоков с выборкой цветов
+    17. При выборе цвета макет исчезает, а выбранный цвет присваевается елементу
+    18 Убираем обработчик с MyColor
+
+
+
+
+*/
+
+
+    window.addEventListener("load", function () {
+      var myWidth = document.getElementById('myWidth');
+
+
+      // Ваш код тут.
+      myWidth.addEventListener('input', function(event){
+        result.style.width = event.target.value + 'px';
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div class="Templating">
+    <header>
+      <input type="range" id="myWidth" min="10" max="500" step="10"/>
+      <input type="color" id="myColor" min="10" max="500" step="10"/>
+    </header>
+
+    <div class="TemplatingResult">
+      <div id="result" class="result"></div>
+    </div>
+  </div>
+
+
+
+
+  <style>
+    .result{
+      width: 50px;
+      background: gray;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    #MyValidateForm{
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #MyValidateForm input{
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      padding: 10px 20px;
+    }
+  </style>
+</body>
+</html>
