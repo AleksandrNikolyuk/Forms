@@ -24,15 +24,15 @@
 </head>
 <body>
 
-  <form id="MyValidateForm">
-    <input type="text" name="Login" placeholder="Ваш логин" />
+  <form id="MyValidateForm" name='ValidateForm'>
+    <input type="text" id='Login'name="Login" placeholder="Ваш логин" />
     <input type="password" placeholder="Ваш пароль" />
     <input type="password" placeholder="Повторите пароль" />
     <label for="agree">
       <span>Вы согласны с лицензионым соглашением.</span>
       <input type="checkbox" id="agree" />
     </label>
-    <input type="submit" value="Отправить" />
+    <input type="submit" id="sub" value="Отправить" disabled/>
   </form>
   <style>
     #MyValidateForm{

@@ -1,9 +1,67 @@
 
 
-var MyValidateForm = document.getElementById('MyValidateForm');
-MyValidateForm.addEventListener("submit", function (e) {  // измените на onchange
+window.addEventListener("load", function () {
+    var MyValidateForm = document.getElementById('MyValidateForm');
+        MyArray = Array.from(MyValidateForm.elements);
+        MyCheckbox = document.getElementById('agree');
+
+
+    function validateForm(event){
+        event.preventDefault();
+        var ArrayPassword = [];
+        // Присвоить переменные для сравнения паролей!
+        MyArray.forEach(function(element){
+
+        var MyElementType = element.type;
+
+            if (MyElementType === 'text' || MyElementType === 'password'){
+                if (element.value !== '') {
+                    element.style.borderColor = 'green';
+                } else {
+                    element.style.borderColor = 'red';
+                }
+
+                if (MyElementType === 'password'){
+                    console.log(element);
+                    ArrayPassword.push(element);
+                }
+            }
+        });
+        if (ArrayPassword[0].value === ArrayPassword[1].value){
+            if(ArrayPassword[0].value !== '') {
+                ArrayPassword[0].style.borderColor = 'green';
+            }
+            if(ArrayPassword[1].value !== '') {
+                ArrayPassword[1].style.borderColor = 'green';
+            }
+
+        } else {
+            ArrayPassword[0].style.borderColor = 'red';
+            ArrayPassword[1].style.borderColor = 'red';
+        }
+
+    }  //'submit'
+
+    MyCheckbox.addEventListener('click', function(e){
+        var Check = e.target.checked;
+            Sub = document.getElementById('sub');
+        if( Check === true){
+            Sub.removeAttribute('disabled');
+            MyValidateForm.addEventListener('submit', validateForm);
+        } else {
+            Sub.setAttribute('disabled', true);
+            MyValidateForm.removeEventListener('submit', validateForm);
+        }
+    });
 
 });
+// var Iterable = Array.from( i );
+//
+// var MyForm = document.forms.ValidateForm;
+// MyForm.forEach( function (e){
+//
+//
+// });
 /*
 1. При отправке формы запускается валидация
 2. Присваеваем форме переменную
