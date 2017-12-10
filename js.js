@@ -39,7 +39,7 @@ window.addEventListener("load", function () {
             ArrayPassword[0].style.borderColor = 'red';
             ArrayPassword[1].style.borderColor = 'red';
         }
-
+// выбрать все значения и отправить
     }  //'submit'
 
     MyCheckbox.addEventListener('click', function(e){
